@@ -22,26 +22,22 @@ Library help to convert units.
 
 ## Installation
 
-* Add below line to `composer.json `
-
 ```php
 // ...
-"abhimanyusharma003/conversion": "dev-master"
+composer require becker/conversion
  // ...
 ```
-
-* Run `composer update` or `composer install `
 
 * Open `config/app.php` and add the service provider to your `providers` array.
 		
 ```php
-    Abhimanyu003\Conversion\ConversionServiceProvider::class
+    Becker\Conversion\ConversionServiceProvider::class
 ```
 
 * Add Aliases
 
 ```php
-    'Conversion'  => Abhimanyu003\Conversion\Facades\Conversion::class
+    'Conversion'  => Becker\Conversion\Facades\Conversion::class
 ```
 
 ## How to use
