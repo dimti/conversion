@@ -1,10 +1,10 @@
 {
-    "name": "abhimanyu003/conversion",
+    "name": "becker/conversion",
     "description": "Laravel Unit Conversion",
      "keywords": [
          "laravel", "unit", "measurements", "conversion"
      ],
-    "homepage":    "https://github.com/abhimanyu003/conversion",
+    "homepage":    "https://github.com/becker/conversion",
     "license": "MIT",
     "authors": [
         {
@@ -14,12 +14,11 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.*|~5.0"
+        "php": ">=5.4.0"
     },
     "autoload": {
         "psr-0": {
-            "Abhimanyu003\\Conversion": "src/"
+            "Becker\\Conversion": "src/"
         }
     },
     "minimum-stability": "stable"
