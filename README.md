@@ -1,215 +1,245 @@
 ## Laravel Unit Conversion
 
-Library help to convert units.
+This package helps to convert units. It was forked from [abhimanyu003/conversion](https://github.com/abhimanyu003/conversion) repository.
 
-## Units supported
+### Units supported
 
-* Acceleration
-* Angle
-* Area
-* Storage
-* Current
-* Fuel
-* Length
-* Mass
-* Pressure
-* Speed
-* Temperature
-* Time
-* Voltage
-* Volume
+-   Acceleration
+-   Angle
+-   Area
+-   Storage
+-   Current
+-   Fuel
+-   Length
+-   Mass
+-   Pressure
+-   Speed
+-   Temperature
+-   Time
+-   Voltage
+-   Volume
 
-
-## Installation
+### Installation
 
 ```php
 composer require becker/conversion
 ```
 
-* Open `config/app.php` and add the service provider to your `providers` array.
-		
-```php
-    Becker\Conversion\ConversionServiceProvider::class
-```
+### Register the Service Provider
 
-* Add Aliases
+> **NOTE:** You can skip this step if you are using Laravel 5.5 or higher. The package is automatically registered, due to the [package discovery](https://laravel.com/docs/master/packages#package-discovery) feature.
+
+Open up the `config/app.php` and register the new Service Provider:
 
 ```php
-    'Conversion'  => Becker\Conversion\Facades\Conversion::class
+//config/app.php
+
+/*
+ * Package Service Providers...
+ */
+
+Becker\Conversion\ConversionServiceProvider::class
+
+//...
 ```
 
-## How to use
-
+You can also register the Alias:
 
 ```php
-Conversion::convert($value,'type')->to('type');
+'Conversion'  => Becker\Conversion\Facades\Conversion::class
 ```
 
-Formatting results use
+### How to use
 
 ```php
-Conversion::convert($value,'type')->to('type')
-->format(int decimal,'decimal place modifier','thousand place modifer');
+Conversion::convert($value, 'type')->to('another_type');
 ```
 
-## Example
+#### Example:
 
-* Converting MB to kb
+-   Converting MB to KB
 
 ```php
-Conversion::convert(1, 'megabyte')->to('kilobyte'); // output 1,024.00 ( two decimal place )
-
-// Formatting the output
-Conversion::convert(1, 'megabyte')->to('kilobyte')->format(0,'.',','); // output 1,024 ( no decimal place )
+Conversion::convert(1, 'megabyte')->to('kilobyte');
+// 1.024,00 (two decimal places)
 ```
 
-* Converting mm to cm
+-   Converting mm to cm
 
 ```php
-Conversion::convert(1000,'millimetre')->to('centimetre');
+Conversion::convert(1000, 'millimeter')->to('centimeter');
 ```
 
-
-* Converting kg to g
+-   Converting kg to g
 
 ```php
-Conversion::convert(1,'kilogram')->to('gram');
+Conversion::convert(1, 'kilogram')->to('gram');
 ```
 
+### Formatting results:
 
-## Conversion Chart
+```php
+Conversion::convert($value, 'type')->to('another_type')
+->format(int decimal, 'decimal place modifier', 'thousand place modifier');
+```
 
-## Acceleration         
-       METRE_PER_SECOND_SQUARE
-                               
-## Angle                
-       TURN                  
-       RADIAN                
-       DEGREE                
-       GRADIAN               
-                               
-## Area                 
-       SQUARE_METRE          
-       HECTARE               
-       SQUARE_KILOMETRE      
-       SQUARE_INCH           
-       SQUARE_FEET           
-       SQUARE_YARD           
-       ACRE                  
-       SQUARE_MILE           
-                               
-## Storage              
-       BIT                   
-       BYTE                  
-       KILOBIT               
-       KILOBYTE              
-       MEGABIT               
-       MEGABYTE              
-       GIGABIT               
-       GIGABYTE              
-       TERABIT               
-       TERABYTE              
-       PETABIT               
-       PETABYTE              
-                               
-## Current              
-       STATAMPERE            
-       MICROAMPERE           
-       MILLIAMPERE           
-       AMPERE                
-       ABAMPERE              
-       KILOAMPERE            
-                               
-## Fuel                 
-       KILOMETRES_PER_LITRE  
-       LITRE_PER_100_KILOMETRE
-       MILES_PER_GALLON      
-       US_MILES_PER_GALLON   
-                               
-## Length               
-       MILLIMETRE            
-       CENTIMETRE            
-       METRE                 
-       KILOMETRE             
-       INCH                  
-       FOOT                  
-       YARD                  
-       MILE                  
-       NAUTICAL_MILE         
-                               
-## Mass                 
-       MICROGRAM             
-       MILLIGRAM             
-       GRAM                  
-       KILOGRAM              
-       METRIC_TON            
-       OUNCE                 
-       POUND                 
-       STONE                 
-       SHORT_TON             
-       LONG_TON              
-                               
-## Pressure             
-       PASCAL                
-       KILOPASCAL            
-       MEGAPASCAL            
-       BAR                   
-       MILLIMETRES_OF_MERCURY
-       INCHES_OF_MERCURY     
-       POUNDS_PER_SQUARE_INCH
-       ATMOSPHERE            
-                               
-## Speed                
-       METRE_PER_SECOND      
-       KILOMETRES_PER_HOUR   
-       FEET_PER_SECOND       
-       MILES_PER_HOUR        
-       KNOT                  
-                               
-## Temperature          
-       CELSIUS               
-       FAHRENHEIT            
-       KELVIN                
-                               
-## Time                 
-       NANOSECOND            
-       MICROSECOND           
-       MILLISECOND           
-       SECOND                
-       MINUTE                
-       HOUR                  
-       DAY                   
-       WEEK                  
-       MONTH                 
-       YEAR                  
-       DECADE                
-       CENTURY               
-       MILLENIUM             
-                               
-## Voltage              
-       VOLT                  
-       KILOVOLT              
-                               
-## Volume               
-       MILLILITRE            
-       LITRE                 
-       CUBIC_METRE           
-       GALLON                
-       QUART                 
-       PINT                  
-       TABLESPOON            
-       TEASPOON              
-       US_GALLON             
-       US_QUART              
-       US_PINT               
-       US_CUP                
-       US_OUNCE              
-       US_TABLESPOON         
-       US_TEASPOON           
-       CUBIC_INCH            
-       CUBIC_FOOT            
+#### Example:
 
+```php
+Conversion::convert(1, 'megabyte')->to('kilobyte')->format(0,'.',',');
+// 1,024 (no decimal place)
+```
 
-## Contribute
+### Conversion Chart
+
+#### Acceleration
+
+-   METRE_PER_SECOND_SQUARE
+
+#### Angle
+
+-   TURN
+-   RADIAN
+-   DEGREE
+-   GRADIAN
+
+#### Area
+
+-   SQUARE_METER
+-   HECTARE
+-   SQUARE_KILOMETER
+-   SQUARE_INCH
+-   SQUARE_FEET
+-   SQUARE_YARD
+-   ACRE
+-   SQUARE_MILE
+
+#### Storage
+
+-   BIT
+-   BYTE
+-   KILOBIT
+-   KILOBYTE
+-   MEGABIT
+-   MEGABYTE
+-   GIGABIT
+-   GIGABYTE
+-   TERABIT
+-   TERABYTE
+-   PETABIT
+-   PETABYTE
+
+#### Current
+
+-   STATAMPERE
+-   MICROAMPERE
+-   MILLIAMPERE
+-   AMPERE
+-   ABAMPERE
+-   KILOAMPERE
+
+#### Fuel
+
+-   KILOMETERS_PER_LITRE
+-   LITRE_PER_100_KILOMETER
+-   MILES_PER_GALLON
+-   US_MILES_PER_GALLON
+
+#### Length
+
+-   MILLIMETER
+-   CENTIMETER
+-   METER
+-   KILOMETER
+-   INCH
+-   FOOT
+-   YARD
+-   MILE
+-   NAUTICAL_MILE
+
+#### Mass
+
+-   MICROGRAM
+-   MILLIGRAM
+-   GRAM
+-   KILOGRAM
+-   METRIC_TON
+-   OUNCE
+-   POUND
+-   STONE
+-   SHORT_TON
+-   LONG_TON
+
+#### Pressure
+
+-   PASCAL
+-   KILOPASCAL
+-   MEGAPASCAL
+-   BAR
+-   MILLIMETERS_OF_MERCURY
+-   INCHES_OF_MERCURY
+-   POUNDS_PER_SQUARE_INCH
+-   ATMOSPHERE
+
+#### Speed
+
+-   METER_PER_SECOND
+-   KILOMETERS_PER_HOUR
+-   FEET_PER_SECOND
+-   MILES_PER_HOUR
+-   KNOT
+
+#### Temperature
+
+-   CELSIUS
+-   FAHRENHEIT
+-   KELVIN
+
+#### Time
+
+-   NANOSECOND
+-   MICROSECOND
+-   MILLISECOND
+-   SECOND
+-   MINUTE
+-   HOUR
+-   DAY
+-   WEEK
+-   MONTH
+-   YEAR
+-   DECADE
+-   CENTURY
+-   MILLENIUM
+
+#### Voltage
+
+-   VOLT
+-   KILOVOLT
+
+#### Volume
+
+-   MILLILITRE
+-   LITRE
+-   CUBIC_METER
+-   GALLON
+-   QUART
+-   PINT
+-   TABLESPOON
+-   TEASPOON
+-   US_GALLON
+-   US_QUART
+-   US_PINT
+-   US_CUP
+-   US_OUNCE
+-   US_TABLESPOON
+-   US_TEASPOON
+-   CUBIC_INCH
+-   CUBIC_FOOT
+
+#### Contribute
 
 Feel free to contribute and update the rep.
+
+```
+
+```

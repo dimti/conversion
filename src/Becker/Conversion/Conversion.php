@@ -10,7 +10,7 @@ class Conversion
      */
     protected static $conversionChart = [
         // Acceleration
-        'METRE_PER_SECOND_SQUARED' => 1,
+        'METER_PER_SECOND_SQUARED' => 1,
 
         // Angle
         'TURN'    => 6.28318531,
@@ -19,9 +19,9 @@ class Conversion
         'GRADIAN' => 0.015707963267949,
 
         // Area
-        'SQUARE_METRE'     => 1,
+        'SQUARE_METER'     => 1,
         'HECTARE'          => 100,
-        'SQUARE_KILOMETRE' => 1000000,
+        'SQUARE_KILOMETER' => 1000000,
         'SQUARE_INCH'      => 0.00064516,
         'SQUARE_FEET'      => 0.09290304,
         'SQUARE_YARD'      => 0.83612736,
@@ -51,16 +51,16 @@ class Conversion
         'KILOAMPERE'  => 1000,
 
         // Fuel
-        'KILOMETRES_PER_LITRE'     => 1,
-        'LITRE_PER_100_KILOMETRES' => 100,
+        'KILOMETERS_PER_LITRE'     => 1,
+        'LITRE_PER_100_KILOMETERS' => 100,
         'MILES_PER_GALLON'         => 0.354006,
         'US_MILES_PER_GALLON'      => 0.425144,
 
         // Length
-        'MILLIMETRE'    => 0.001,
-        'CENTIMETRE'    => 0.01,
-        'METRE'         => 1,
-        'KILOMETRE'     => 1000,
+        'MILLIMETER'    => 0.001,
+        'CENTIMETER'    => 0.01,
+        'METER'         => 1,
+        'KILOMETER'     => 1000,
         'INCH'          => 0.0254,
         'FOOT'          => 0.3048,
         'YARD'          => 0.9144,
@@ -84,14 +84,14 @@ class Conversion
         'KILOPASCAL'             => 1000,
         'MEGAPASCAL'             => 1e6,
         'BAR'                    => 1e5,
-        'MILLIMETRES_OF_MERCURY' => 133.3224,
+        'MILLIMETERS_OF_MERCURY' => 133.3224,
         'INCHES_OF_MERCURY'      => 3.386389e3,
         'POUNDS_PER_SQUARE_INCH' => 6.894757e3,
         'ATMOSPHERE'             => 101325,
 
         // Speed
-        'METRE_PER_SECOND'    => 1,
-        'KILOMETRES_PER_HOUR' => 0.277778,
+        'METER_PER_SECOND'    => 1,
+        'KILOMETERS_PER_HOUR' => 0.277778,
         'FEET_PER_SECOND'     => 0.3048,
         'MILES_PER_HOUR'      => 0.44704,
         'KNOT'                => 0.514444,
@@ -123,7 +123,7 @@ class Conversion
         // Volume
         'MILLILITRE'    => 1e-6,
         'LITRE'         => 0.001,
-        'CUBIC_METRE'   => 1,
+        'CUBIC_METER'   => 1,
         'GALLON'        => 0.00454609,
         'QUART'         => 0.00113652,
         'PINT'          => 0.000568261,
@@ -232,7 +232,7 @@ class Conversion
      * @param string $thousandSep
      * @return string
      */
-    public function format($decimals = 2, $decPoint = '.', $thousandSep = ',')
+    public function format($decimals = 2, $decPoint = ',', $thousandSep = '.')
     {
         return number_format($this->value, $decimals, $decPoint, $thousandSep);
     }
