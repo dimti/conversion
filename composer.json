@@ -1,10 +1,13 @@
 {
     "name": "becker/conversion",
     "description": "Laravel Unit Conversion",
-     "keywords": [
-         "laravel", "unit", "measurements", "conversion"
-     ],
-    "homepage":    "https://github.com/becker/conversion",
+    "keywords": [
+        "laravel",
+        "unit",
+        "measurements",
+        "conversion"
+    ],
+    "homepage": "https://github.com/becker/conversion",
     "license": "MIT",
     "authors": [
         {
@@ -18,9 +21,19 @@
     },
     "autoload": {
         "psr-0": {
-            "Becker\\Conversion": "src/"
+            "Becker\\Conversion\\": "src/"
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Becker\\Conversion\\ConversionServiceProvider"
+            ],
+            "aliases": {
+                "Conversion": "Becker\\Conversion\\Facades\\Conversion"
+            }
+        }
+    }
 }

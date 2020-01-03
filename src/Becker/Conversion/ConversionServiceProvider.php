@@ -1,10 +1,11 @@
-<?php namespace Abhimanyu003\Conversion;
+<?php
+
+namespace Becker\Conversion;
 
 use Illuminate\Support\ServiceProvider;
 
 class ConversionServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -23,7 +24,6 @@ class ConversionServiceProvider extends ServiceProvider
             return new Conversion;
         });
     }
-
 
     /**
      * Get the services provided by the provider.

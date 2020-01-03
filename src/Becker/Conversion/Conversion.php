@@ -1,4 +1,6 @@
-<?php namespace Abhimanyu003\Conversion;
+<?php
+
+namespace Becker\Conversion;
 
 class Conversion
 {
@@ -143,12 +145,10 @@ class Conversion
      */
     protected $value;
 
-
     /**
      * @var string
      */
     protected $unit;
-
 
     /**
      * @var
@@ -184,7 +184,6 @@ class Conversion
         return new Conversion($quantity, $unit);
     }
 
-
     /**
      * @param $unit
      * @return $this
@@ -197,7 +196,6 @@ class Conversion
         return $this;
     }
 
-
     /**
      * @param $from
      * @param $to
@@ -209,7 +207,6 @@ class Conversion
     {
         return ($value * $this->getConversion($from)) / $this->getConversion($to);
     }
-
 
     /**
      * @param $unit
@@ -229,7 +226,6 @@ class Conversion
         return static::$conversionChart[strtoupper($unit)];
     }
 
-
     /**
      * @param int $decimals
      * @param string $decPoint
@@ -240,7 +236,6 @@ class Conversion
     {
         return number_format($this->value, $decimals, $decPoint, $thousandSep);
     }
-
 
     /**
      * @return string
