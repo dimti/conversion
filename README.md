@@ -236,10 +236,6 @@ Conversion::convert(1, 'megabyte')->to('kilobyte')->format(0,'.',',');
 -   CUBIC_INCH
 -   CUBIC_FOOT
 
-#### Contribute
+### Contribute
 
-Feel free to contribute and update the rep.
-
-```
-
-```
+Feel free to contribute and update the repository.
