@@ -23,9 +23,7 @@ Library help to convert units.
 ## Installation
 
 ```php
-// ...
 composer require becker/conversion
- // ...
 ```
 
 * Open `config/app.php` and add the service provider to your `providers` array.
